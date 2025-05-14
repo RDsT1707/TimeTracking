@@ -16,13 +16,13 @@ import '../Cards/Card.css';
 // Import de l'image de l'utilisateur
 import avatarImg from '/img/image-jeremy.png';
 
-// === Données utilisateur ===
+// Données utilisateur ===
 const userData = {
     name: "Jeremy Robson",
     avatar: avatarImg
 };
 
-// === Données des activités avec temps par période ===
+// Données des activités avec temps par période ===
 const activitiesData = [
     {
         name: "Travail",

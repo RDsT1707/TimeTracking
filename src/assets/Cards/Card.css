@@ -1,3 +1,4 @@
+/* Reset de base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,44 +13,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* === CONTAINER PRINCIPAL === */
 .dashboard-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
+/* === GRILLE PRINCIPALE === */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  max-width: 1200px;
+  gap: 2rem;
   width: 100%;
+  max-width: 1200px;
 }
 
+/* === COLONNE PROFIL === */
 .profile-column {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
+/* === CARTE PROFIL === */
 .profile-card {
   background-color: #4f46e5;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  margin-bottom: 0.25rem;
-  position: relative;
-  width: 100%;
   height: 385px;
   z-index: 10;
 }
 
-/* ✅ Avatar plus gros, en haut à gauche */
 .avatar-container {
   background-color: white;
   border-radius: 9999px;
@@ -66,7 +66,6 @@ body {
   object-fit: cover;
 }
 
-/* ✅ Texte à gauche et plus grand */
 .profile-info {
   text-align: left;
   color: white;
@@ -83,48 +82,42 @@ body {
   margin-top: 0.25rem;
 }
 
-/* ✅ Time selector reste positionnée sous la carte profil avec chevauchement */
+/* === BOUTONS PÉRIODE === */
 .time-selector-card {
   background-color: #1e293b;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 2rem;
-  height: auto;
-  width: 100%;
+  margin-top: -1.5rem;
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: -1.5rem;
   z-index: 5;
 }
 
-/* ✅ Ajuste les boutons */
 .time-selector-button {
   text-align: left;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   background: none;
   border: none;
   color: #a5b4fc;
   cursor: pointer;
-  padding: 0.75rem 0;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
 }
 
 .time-selector-button:last-child {
   margin-bottom: 0;
 }
 
-.time-selector-button.active {
-  color: white;
-}
-
+.time-selector-button.active,
 .time-selector-button:hover:not(.active) {
   color: white;
 }
 
-
+/* === GRILLE DES ACTIVITÉS === */
 .activities-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .activity-card-container {
@@ -133,12 +126,11 @@ body {
 
 .activity-banner {
   position: absolute;
-  top: 5px;
-  left: 16px;
+  top: 0.5rem;
+  left: 1rem;
   right: 0;
   height: 7rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-radius: 1rem 1rem 0 0;
   z-index: 0;
   overflow: hidden;
 }
@@ -146,14 +138,14 @@ body {
 .activity-icon {
   position: absolute;
   right: 1rem;
-  top: 0.75rem;
+  top: 1rem;
 }
 
 .activity-card {
   background-color: #1e293b;
-  border-radius: 0.5rem;
-  margin-top: 4.5rem;
-  padding: 2.5rem;
+  border-radius: 1rem;
+  margin-top: 5rem;
+  padding: 2.5rem 2rem;
   margin-left: 1rem;
   position: relative;
   z-index: 10;
@@ -167,15 +159,16 @@ body {
 }
 
 .activity-title {
-  color: white;
   font-weight: 500;
+  font-size: 1.25rem;
 }
 
 .more-button {
   background: none;
   border: none;
-  color: #94a3b8; 
+  color: #94a3b8;
   cursor: pointer;
+  transition: color 0.2s ease-in-out;
 }
 
 .more-button:hover {
@@ -188,18 +181,18 @@ body {
 }
 
 .activity-hours {
-  color: white;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 300;
+  margin-bottom: 0.25rem;
 }
 
 .activity-previous {
-  color: #94a3b8; 
+  color: #94a3b8;
   font-size: 0.875rem;
-  margin-top: 0.5rem;
 }
 
-@media (min-width: 768px) {
+/* === RESPONSIVE === */
+@media (min-width: 640px) {
   .activities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -209,7 +202,7 @@ body {
   .dashboard-grid {
     grid-template-columns: 1fr 3fr;
   }
-  
+
   .activities-grid {
     grid-template-columns: repeat(3, 1fr);
   }
